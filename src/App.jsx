@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import Projects from './components/Projects.jsx';
+import Experience from './components/Experience.jsx';
+import Education from './components/Education.jsx';
+import Contact from './components/Contact.jsx';
 import './styles/global.css';
 
 function App() {
@@ -12,7 +17,11 @@ function App() {
   return (
     <>
       <Navbar toggleTheme={() => setDarkMode(!darkMode)} />
-      {/* Add your other sections here: Hero, Experience, Projects, etc. */}
+      <Hero />
+      <Experience />
+      <Projects />
+      <Education />
+      <Contact />
     </>
   );
 }

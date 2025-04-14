@@ -6,6 +6,7 @@ function Projects() {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
+      style={{ padding: '2rem' }}
     >
       <h2>Projects</h2>
       <ul>
