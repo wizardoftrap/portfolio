@@ -1,22 +1,138 @@
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
+// src/components/Hero.jsx
+import { useEffect, useRef } from 'react';
+import { FiGithub, FiLinkedin, FiMail, FiInstagram } from 'react-icons/fi';
 
-function Model() {
-  const model = useGLTF('/assets/profile3D.glb');
-  return <primitive object={model.scene} scale={1.5} />;
-}
+const Hero = () => {
+  const profileRef = useRef(null);
+  const typingRef = useRef(null);
+  const typingTextRef = useRef(null);
+  
+  // Typing animation effect
+  useEffect(() => {
+    if (!typingRef.current || !typingTextRef.current) return;
+    
+    const roles = ['Software Developer','Backend Developer', 'Android Developer'];
+    let currentRoleIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+    
+    const type = () => {
+      const currentRole = roles[currentRoleIndex];
+      
+      if (isDeleting) {
+        typingTextRef.current.textContent = currentRole.substring(0, currentCharIndex - 1);
+        currentCharIndex--;
+        typingSpeed = 50;
+      } else {
+        typingTextRef.current.textContent = currentRole.substring(0, currentCharIndex + 1);
+        currentCharIndex++;
+        typingSpeed = 100;
+      }
+      
+      if (!isDeleting && currentCharIndex === currentRole.length) {
+        isDeleting = true;
+        typingSpeed = 1000; // Pause at the end
+      } else if (isDeleting && currentCharIndex === 0) {
+        isDeleting = false;
+        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+        typingSpeed = 500; // Pause before typing next role
+      }
+      
+      setTimeout(type, typingSpeed);
+    };
+    
+    setTimeout(type, 1000);
+  }, []);
 
-function Hero() {
+  // Parallax effect for profile picture
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (!profileRef.current) return;
+      
+      const x = (window.innerWidth / 2 - e.pageX) / 25;
+      const y = (window.innerHeight / 2 - e.pageY) / 25;
+      
+      profileRef.current.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const socialLinks = [
+    { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/shiv-prakash-verma-000133234', label: 'LinkedIn' },
+    { icon: <FiGithub />, url: 'https://github.com/wizardoftrap', label: 'GitHub' },
+    { icon: <FiInstagram />, url: 'https://www.instagram.com/sp_shivamverma', label: 'Twitter' },
+    { icon: <FiMail />, url: 'mailto:shivprakashiitropar@gmail.com', label: 'Email' }
+  ];
+
   return (
-    <div style={{ width: '100%', height: '500px' }}>
-      <Canvas>
-        <ambientLight />
-        <directionalLight position={[5, 5, 5]} />
-        <Model />
-        <OrbitControls enableZoom={false} />
-      </Canvas>
-    </div>
+    <section id="hero" className="hero">
+      <div className="container">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between hero-container">
+          {/* Left side - Text content */}
+          <div className="hero-content">
+            <p className="hero-subtitle fade-in">Hello, I'm</p>
+            
+            <h1 className="hero-title fade-in delay-1">Shiv Prakash Verma</h1>
+            
+            <div className="typing-container fade-in delay-2" ref={typingRef}>
+              <span ref={typingTextRef} className="typing-text"></span>
+              <span className="typing-cursor">|</span>
+            </div>
+            
+            <p className="hero-description fade-in delay-3">
+              I am an Electrical Engineering student at IIT Ropar.
+              I have developed a strong foundation in Software Development. 
+              I am passionate about learning new technologies and collaborating with diverse teams to solve complex problems.
+            </p>
+            
+            <div className="hero-buttons fade-in delay-4">
+              <a href="#projects" className="btn btn-primary">
+                View My Work
+              </a>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                Download CV
+              </a>
+            </div>
+            
+            <div className="hero-social fade-in delay-5">
+              {socialLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="social-icon"
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+          
+          {/* Right side - Profile picture */}
+          <div className="hero-image fade-in">
+            <div className="profile-img-container">
+              <div ref={profileRef}>
+                <img 
+                  src="/assets/profile.jpg" 
+                  alt="Shiv Prakash" 
+                  className="profile-img"
+                />
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </section>
   );
-}
+};
 
 export default Hero;
