@@ -95,7 +95,7 @@ const Hero = () => {
               <a href="#projects" className="btn btn-primary">
                 View My Work
               </a>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+              <a href="https://drive.usercontent.google.com/u/0/uc?id=19YZ6fno44CnABiDTLEFqxCAteg-ytB4m&export=download" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
                 Download CV
               </a>
             </div>
@@ -121,7 +121,7 @@ const Hero = () => {
             <div className="profile-img-container">
               <div ref={profileRef}>
                 <img 
-                  src="/assets/profile.jpg" 
+                  src="https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/profile.jpg" 
                   alt="Shiv Prakash" 
                   className="profile-img"
                 />

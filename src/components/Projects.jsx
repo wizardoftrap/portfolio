@@ -31,7 +31,7 @@ const Projects = () => {
       id: 1,
       title: 'Mental Health Prediction System',
       description: 'The Mental Health Prediction System utilizes a Flask API to deploy the machine learning model, while a Spring Boot API handles user interactions, stores data, and sends personalized mental health predictions via email.',
-      image: '/assets/projects/mhp.webp',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/mhp.webp',
       technologies: ['java', 'Python', 'Spring Boot', 'MySQL', 'Flask', 'ML'],
       github: 'https://github.com/wizardoftrap/mental-health-predicter',
       category: 'backend'
@@ -40,7 +40,7 @@ const Projects = () => {
       id: 2,
       title: 'Portfolio Website',
       description: 'A responsive portfolio built with React and Framer Motion ensures smooth animations, dynamic content, and a mobile-friendly design—perfect for showcasing projects and skills with a modern, professional touch.',
-      image: '/assets/projects/portfolio.png',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/portfolio.png',
       technologies: ['React', 'Framer Motion', 'CSS'],
       github: 'https://github.com/wizardoftrap/portfolio',
       category: 'fullstack'
@@ -49,7 +49,7 @@ const Projects = () => {
       id: 3,
       title: 'BlogNest',
       description: 'This is a comprehensive open-source Android application that allows users to create and publish blog posts, with built-in features for user authentication and data storage using Firebase Authentication and Firebase Realtime Database.',
-      image: '/assets/projects/bn.png',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/bn.png',
       technologies: ['React', 'Firebase', 'Material UI'],
       github: 'https://github.com/wizardoftrap/BlogNest',
       category: 'android'
@@ -58,7 +58,7 @@ const Projects = () => {
       id: 4,
       title: 'Hospital Management System',
       description: 'This project focuses on optimizing healthcare operations by efficiently allocating resources such as doctors, nurses, medical equipment, and scheduling treatment paths for patients. The goal is to improve patient outcomes, minimize waiting times, and optimize the use of hospital resources.',
-      image: '/assets/projects/hms.png',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/hms.png',
       technologies: ['Java', 'Spring Boot', 'CSS', 'Thymeleaf', 'MySQL'],
       github: 'https://github.com/wizardoftrap/healthCareSystem',
       category: 'fullstack'
@@ -67,7 +67,7 @@ const Projects = () => {
       id: 5,
       title: 'Customer Segmentation',
       description: 'This project implements KMeans clustering for customer segmentation. The dataset used in this project is processed, cleaned, and visualized to provide insights into customer behavior and patterns based on various features like education level, marital status, spending patterns, and more.',
-      image: '/assets/projects/cs.png',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/cs.png',
       technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
       github: 'https://github.com/wizardoftrap/Customer-Segmentation',
       category: 'data'
@@ -76,7 +76,7 @@ const Projects = () => {
       id: 6,
       title: 'Tuition Classes Management API',
       description: 'This Spring Boot application manages tuition classes, students, and subjects. It supports CRUD operations and searching for students by name, subjects by name, and classes by student or subject. Using a MySQL database and Spring Data JPA, this API provides a robust backend for organizing tuition classes effectively.',
-      image: '/assets/projects/tcm.jpg',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/tcm.jpg',
       technologies: ['Java', 'Spring Boot', 'MySQL'],
       github: 'https://github.com/wizardoftrap/Tuition-Management-REST-API',
       category: 'backend'

@@ -118,7 +118,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="footer-bottom">
           <p className="copyright">
-            © {currentYear} Your Name. All rights reserved.
+            © {currentYear} Shiv Prakash Verma. All rights reserved.
           </p>
           <p className="footer-credits">
             Made with <FiHeart className="heart-icon" /> using React

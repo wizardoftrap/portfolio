@@ -27,41 +27,56 @@ const Education = () => {
   // Sample education data - replace with your actual education
   const educationData = [
     {
-      degree: 'Master of Science in Computer Science',
-      institution: 'Stanford University',
-      location: 'Stanford, CA',
-      period: '2018 - 2020',
-      description: 'Specialized in Artificial Intelligence and Machine Learning. Graduated with honors and completed a thesis on neural network optimization techniques.',
+      degree: 'B. Tech. in Electrical Engineering',
+      institution: 'IIT Ropar',
+      location: 'Rupnagar, Punjab',
+      period: '2021 - 2025',
+      description: '',
       achievements: [
-        'GPA: 3.9/4.0',
-        'Dean\'s List: All semesters',
-        'Teaching Assistant for Data Structures and Algorithms'
+        'GPA: 7.26/10.0',
+        'Captain, Hockey, IIT Ropar',
+        'Deputy Secretary, ODAC, IIT Ropar'
       ],
       courses: [
-        'Advanced Algorithms',
-        'Machine Learning',
-        'Neural Networks',
-        'Distributed Systems',
-        'Database Management'
+        'Introduction to Data Structures',
+        'Foundation of Data Science',
+        'Internet of Things',
+        'Deep Learming in Computer Vision',
+        'Probability and Stochastic Processes',
+        'Control System',
+        'Digital Circuits',
+        'Analog Circuits',
+        'High Voltage POwer Equipment'
       ]
     },
     {
-      degree: 'Bachelor of Science in Computer Engineering',
-      institution: 'University of California, Berkeley',
-      location: 'Berkeley, CA',
-      period: '2014 - 2018',
-      description: 'Focused on software engineering and computer architecture. Participated in multiple hackathons and coding competitions.',
+      degree: 'Class 12th',
+      institution: 'Raghukul Vidyapeeth',
+      location: 'Gonda, Uttar Pradesh',
+      period: '2019 - 2021',
+      description: '',
       achievements: [
-        'GPA: 3.7/4.0',
-        'Undergraduate Research Assistant',
-        'President of the Coding Club'
+        'Percentage: 80%'
       ],
       courses: [
-        'Data Structures',
-        'Computer Architecture',
-        'Operating Systems',
-        'Software Engineering',
-        'Web Development'
+        'Physics',
+        'Chemistry',
+        'Mathematics'
+      ]
+    },
+    {
+      degree: 'Class 10th',
+      institution: 'Lucknow Public School',
+      location: 'Lucknow, Uttar Pradesh',
+      period: '2017 - 2019',
+      description: '',
+      achievements: [
+        'Percentage: 96.16%'
+      ],
+      courses: [
+        'Science',
+        'Mathematics',
+        'Foundation in Information Technology'
       ]
     }
   ];

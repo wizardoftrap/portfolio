@@ -76,7 +76,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             </button>
             
             <a 
-              href="/resume.pdf" 
+              href="https://drive.usercontent.google.com/u/0/uc?id=19YZ6fno44CnABiDTLEFqxCAteg-ytB4m&export=download" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -115,7 +115,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           ))}
           <li>
             <a 
-              href="/resume.pdf" 
+              href="https://drive.google.com/file/d/19YZ6fno44CnABiDTLEFqxCAteg-ytB4m/view?usp=sharing/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn btn-primary"
