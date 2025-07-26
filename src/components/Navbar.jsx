@@ -96,8 +96,26 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
         </nav>
       </div>
 
+      {/* Mobile Menu Backdrop */}
+      {mobileMenuOpen && (
+        <div 
+          className="mobile-menu-backdrop"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+        <div className="mobile-menu-header">
+          <span>Menu</span>
+          <button 
+            className="mobile-menu-close"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close mobile menu"
+          >
+            <FiX />
+          </button>
+        </div>
         <ul className="mobile-nav-links">
           {navLinks.map((link) => (
             <li key={link.id}>
