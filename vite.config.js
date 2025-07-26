@@ -11,8 +11,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     minify: 'terser',
-    sourcemap: false
+    sourcemap: false,
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
-  base: '/portfolio/',
+  base: '/', // Changed from '/portfolio/' to '/' for custom domain
   
 });
