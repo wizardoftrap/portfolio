@@ -49,7 +49,7 @@ const Projects = () => {
       id: 3,
       title: 'Network Anomaly Detection',
       description: 'TThis project presents a machine learning pipeline for Network Anomaly Detection, leveraging the power of Random Forests to identify malicious activities in network traffic. The system is trained on the refined NSL-KDD dataset and can perform both binary and multi-class classification of network intrusions. The goal is to develop a model that not only flags anomalous behavior but also categorizes specific attack types, offering actionable insights for cybersecurity operations.',
-      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/mhp.webp',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/network.jpeg',
       technologies: ['Python', 'Cyber Security','Machine Learning'],
       github: 'https://github.com/wizardoftrap/Network-Anomaly-Detection',
       category: 'data'
