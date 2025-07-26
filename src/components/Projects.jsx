@@ -31,7 +31,7 @@ const Projects = () => {
       id: 1,
       title: 'Quiz Maker',
       description: 'In this project, an AI-powered quiz platform was developed using LangChain, Streamlit and Gemini LLM with RAG to generate, grade and deliver quizzes from teacher uploaded notes. Integrated Pinecone vector database for semantic search, automated grading using LLM, result emailing and session-based attempt tracking.',
-      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/mhp.webp',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/quiz.jpg',
       technologies: ['Large Language Models (LLM)', 'LangChain', 'Artificial Intelligence (AI)', 'AI Agents'],
       github: 'https://github.com/wizardoftrap/quiz-maker',
       category: 'data'
@@ -40,7 +40,7 @@ const Projects = () => {
       id: 2,
       title: 'Referring Video Object Segmentation',
       description: 'In this project, a deep learning-based Referring Video Object Segmentation (RVOS) system was developed using Con-volutional Neural Networks (CNNs) with a ResNet-50 backbone to segment objects in videos based on natural language descriptions. A custom model was implemented that effectively integrates visual and textual features, and was trained on the DAVIS-2017 dataset to achieve accurate object segmentation across video frames.',
-      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/mhp.webp',
+      image: 'https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/rvos.png',
       technologies: ['Python', 'Deep Learning', 'Data Science'],
       github: 'https://github.com/wizardoftrap/Referring-Video-Object-Segmentation',
       category: 'data'
