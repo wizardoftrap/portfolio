@@ -830,8 +830,9 @@ img {
 
 .experience-list-item {
   position: relative;
-  
+  text-align: left;
   padding-left: 1.5rem;
+  padding-right: 0;
   margin-bottom: 0.5rem;
 }
 
@@ -903,7 +904,7 @@ img {
   height: 50px;
   transform-style: preserve-3d;
   position: relative;
-  transform: translateY(0) rotateX(5deg) rotateY(-5deg);
+  transform: translateY(0);
   backface-visibility: hidden;
   z-index: 1;
 }
@@ -918,7 +919,7 @@ img {
 }
 
 .skill-card:hover {
-  transform: translateY(-10px) rotateX(10deg) rotateY(-15deg) scale(1.03);
+  transform: translateY(-10px) scale(1.03);
   box-shadow: 
     0 20px 40px rgba(94, 23, 235, 0.2),
     0 15px 20px rgba(0, 0, 0, 0.1),
@@ -1005,9 +1006,9 @@ img {
 
 /* Add floating animation */
 @keyframes float {
-  0% { transform: translateY(0) rotateX(5deg) rotateY(-5deg); }
-  50% { transform: translateY(-5px) rotateX(7deg) rotateY(-7deg); }
-  100% { transform: translateY(0) rotateX(5deg) rotateY(-5deg); }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
 }
 
 .skill-card {
@@ -1128,7 +1129,9 @@ img {
 
 .achievements-item {
   position: relative;
+  text-align: left;
   padding-left: 1.5rem;
+  padding-right: 0;
   margin-bottom: 0.5rem;
 }
 

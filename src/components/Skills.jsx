@@ -11,7 +11,7 @@ import {
 } from 'react-icons/fi';
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState('frontend');
+  const [activeCategory, setActiveCategory] = useState('data');
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -35,10 +35,10 @@ const Skills = () => {
 
   // Skill categories with icons
   const categories = [
-    { id: 'languages', name: 'Languages', icon: <FiCode /> },
     { id: 'data', name: 'Data Science', icon: <FiDatabase /> },
-    { id: 'tools', name: 'Tools', icon: <FiTool /> },
     { id: 'software', name: 'Software', icon: <FiServer /> },
+    { id: 'languages', name: 'Languages', icon: <FiCode /> },
+    { id: 'tools', name: 'Tools', icon: <FiTool /> },
     { id: 'other', name: 'Other', icon: <FiGlobe /> }
   ];
 
@@ -122,7 +122,7 @@ const Skills = () => {
 
 {/* Skills grid without progress bars */}
 <div className={`skills-grid ${isVisible ? 'fade-in delay-2' : ''}`}>
-  {skillsData[activeCategory].map((skill, index) => (
+  {(skillsData[activeCategory] || []).map((skill, index) => (
     <div 
       key={index}
       className="skill-card"
