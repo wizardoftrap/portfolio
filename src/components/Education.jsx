@@ -33,7 +33,7 @@ const Education = () => {
       period: '2021 - 2025',
       description: '',
       achievements: [
-        'GPA: 7.26/10.0',
+        'GPA: 7.34/10.0',
         'Captain, Hockey, IIT Ropar',
         'Deputy Secretary, ODAC, IIT Ropar'
       ],

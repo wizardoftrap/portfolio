@@ -58,7 +58,7 @@ const Footer = () => {
           <div className="footer-about">
             <h3>Shiv Prakash Verma</h3>
             <p>
-              A passionate developer focused on creating beautiful, functional, and user-friendly websites and applications.
+              Data Science Associate@DIOnce | IIT Ropar
             </p>
             <div className="footer-social">
               {socialLinks.map((link, index) => (

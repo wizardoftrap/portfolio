@@ -11,7 +11,7 @@ const Hero = () => {
   useEffect(() => {
     if (!typingRef.current || !typingTextRef.current) return;
     
-    const roles = ['Software Developer','Backend Developer', 'Android Developer'];
+    const roles = ['Data Science','AI/ML','GenAI/AI Agents', 'Backend'];
     let currentRoleIndex = 0;
     let currentCharIndex = 0;
     let isDeleting = false;
@@ -86,16 +86,14 @@ const Hero = () => {
             </div>
             
             <p className="hero-description fade-in delay-3">
-              I am an Electrical Engineering student at IIT Ropar.
-              I have developed a strong foundation in Software Development. 
-              I am passionate about learning new technologies and collaborating with diverse teams to solve complex problems.
+              I have completed B. Tech. in Electrical Engineering from IIT Ropar with a deep interest in Data Science, GenAI, and Backend Development. While my core studies gave me a solid base in electrical systems, I’ve spent a lot of time outside the classroom building projects that involve Machine Learning, Deep Learning, LLMs, and intelligent apps. I enjoy working on the backend — especially with Flask and Spring Boot — and I’m always up for learning new tools and tech. What drives me is solving real problems, learning fast, and building things that actually make an impact.
             </p>
             
             <div className="hero-buttons fade-in delay-4">
               <a href="#projects" className="btn btn-primary">
                 View My Work
               </a>
-              <a href="https://drive.usercontent.google.com/u/0/uc?id=19YZ6fno44CnABiDTLEFqxCAteg-ytB4m&export=download" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+              <a href="https://drive.usercontent.google.com/u/0/uc?id=1-3wZjEjtYUuAqqaIJaJPYjN2I8Fn7ZYG&export=download" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
                 Download CV
               </a>
             </div>

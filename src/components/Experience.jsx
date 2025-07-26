@@ -28,17 +28,17 @@ const Experience = () => {
   // Sample experience data - replace with your actual experience
   const experienceData = [
     {
-      company: 'Easecruit',
-      position: 'Software Developer Intern',
-      period: 'May 2024 - July 2024',
-      location: 'Remote',
+      company: 'DIOnce',
+      position:'Data Science Associate',
+      period: 'July 2025 - Present',
+      location: 'Bengaluru',
       description: [
-        'Built a system that processes resumes by extracting important information such as personal details, work experience, education and skills',
-        'Used Natural Language Processing (NLP) libraries in Java and Python to extract the data',
-        'Used MongoDB for easy data access and data management',
-        'Collaborated with fellow developers to learn best practices'
+        'Collaborated with the data science team to research, develop, and deploy solutions using Large Language Models (LLMs).',
+        'Analyzed datasets and prepare data for training and evaluation of LLMs.',
+        'Assisted in fine-tuning, evaluating, and optimizing LLM-based models for various applications.',
+        'Worked on market research automation tool for automating comprehensive market research using LLMs'
       ],
-      technologies: ['Python', 'Java', 'PyPdf', 'Apache', 'MongoDB']
+      technologies: ['Data Science', 'GenAI', 'LLMs', 'Python', 'Autogen', 'Langchain']
     }
   ];
 

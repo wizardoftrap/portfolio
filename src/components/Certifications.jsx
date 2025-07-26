@@ -58,31 +58,31 @@ const Certifications = () => {
     },
     {
       id: 3,
-      name: 'Java',
-      issuer: 'HackerRank',
-      date: 'October 2022',
-      credentialId: '6C8641AF9D3E                              ',
-      credentialURL: 'https://www.hackerrank.com/certificates/iframe/6c8641af9d3e',
+      name: 'BCG - Data Science Job Simulation',
+      issuer: 'Forage',
+      date: 'May 2025',
+      credentialId: 'tL3aF8ZexLN75E8hc                             ',
+      credentialURL: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/SKZxezskWgmFjRvj9/Tcz8gTtprzAS4xSoK_SKZxezskWgmFjRvj9_tL3aF8ZexLN75E8hc_1748411126765_completion_certificate.pdf',
       description: '',
       skills: [
-        'Java',
-        'OOPs'
+        'Python',
+        'Machine Learning',
+        'Data Analytics'
       ],
     },
     {
       id: 4,
-      name: 'Android Development',
-      issuer: 'Teachnook',
-      date: 'April 2023',
-      credentialId: 'TNINTC22-3878                             ',
-      credentialURL: 'https://drive.google.com/file/d/1amGG0rnVXTo_yaPcy7fwU5_0eOQoc872/view?usp=drivesdk/',
+      name: 'BigQuery for Data Analysts',
+      issuer: 'Google',
+      date: 'June 2025',
+      credentialId: '1630805                             ',
+      credentialURL: 'https://www.cloudskillsboost.google/public_profiles/7d8a52e1-6c16-4f98-b6a9-bb97e04fd900/badges/16300805?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share',
       description: '',
       skills: [
-        'Java',
-        'OOPs',
-        'Spring Boot',
-        'Eclipse',
-        'MySQL'
+        'Google Cloud',
+        'SQL',
+        'Machine Learning',
+        'BigQuery'
       ],
     },
     {
@@ -94,13 +94,30 @@ const Certifications = () => {
       credentialURL: 'https://www.udemy.com/certificate/UC-861c3c0f-e71d-4ae3-9ceb-728b163ab4ed/',
       // src/components/Certifications.jsx (continued)
       description: '',
-      skills: [
-        'Android',
+     skills: [
         'Java',
-        'Android Studio',
-        'Firebase'
+        'OOPs',
+        'Spring Boot',
+        'Eclipse',
+        'MySQL'
+      ],
+    },
+    {
+      id: 6,
+      name: 'BigQuery for Machine Learning',
+      issuer: 'Google',
+      date: 'June 2025',
+      credentialId: '16366276                            ',
+      credentialURL: 'https://www.cloudskillsboost.google/public_profiles/7d8a52e1-6c16-4f98-b6a9-bb97e04fd900/badges/16366276?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share',
+      description: '',
+      skills: [
+        'Google Cloud',
+        'SQL',
+        'Machine Learning',
+        'BigQuery'
       ],
     }
+
   ];
 
   const toggleExpand = (id) => {

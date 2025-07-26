@@ -36,53 +36,51 @@ const Skills = () => {
   // Skill categories with icons
   const categories = [
     { id: 'languages', name: 'Languages', icon: <FiCode /> },
-    { id: 'backend', name: 'Backend', icon: <FiServer /> },
-    { id: 'frontend', name: 'Frontend', icon: <FiLayout /> },
-    { id: 'database', name: 'Database', icon: <FiDatabase /> },
+    { id: 'data', name: 'Data Science', icon: <FiDatabase /> },
     { id: 'tools', name: 'Tools', icon: <FiTool /> },
-    
+    { id: 'software', name: 'Software', icon: <FiServer /> },
     { id: 'other', name: 'Other', icon: <FiGlobe /> }
   ];
 
   // Skills data - replace with your actual skills
   const skillsData = {
-    frontend: [
+    software: [
       { name: 'React'},
-      { name: 'Vite'},
-      { name: 'Thymeleaf'},
-      { name: 'HTML'},
-      { name: 'CSS'}
-    ],
-    backend: [
       { name: 'Spring Boot'},
       { name: 'Flask'},
-      { name: 'RESTful APIs'}
+      { name: 'RESTful APIs'},
+      { name: 'Streamlit'}
     ],
-    database: [
+    data: [
+      { name: 'LLMs'},
+      { name: 'GenAI'},
+      { name: 'Autogen'},
+      { name: 'Langchain'},
+      { name: 'n8n'},
+      { name: 'Machine Learning'},
+      { name: 'Deep Learning'},
       { name: 'MongoDB'},
       { name: 'MySQL'},
-      { name: 'Firebase'}
+      { name: 'Firebase'},
+      { name: 'Pandas'},
+      { name: 'NumPy'}
+      
     ],
     tools: [
+      { name: 'Google Cloud'},
+      { name: 'Azure'},
       { name: 'Git'},
-      { name: 'gitHub'},
+      { name: 'GitHub'},
       { name: 'Docker'},
       { name: 'VS Code'},
       { name: 'Eclipse'},
       { name: 'PyCharm'},
       { name: 'Jupyter'},
-      { name: 'Google Colab'},
       { name: 'Linux'},
-      { name: 'Android Studio'},
-      { name: 'Pandas'},
-      { name: 'NumPy'},
-      { name: 'JPA'},
-      { name: 'Hibernate'},
-      { name: 'MS Excel'}
+      { name: 'Android Studio'}
     ],
     languages: [
       { name: 'Java'},
-      { name: 'C'},
       { name: 'Python'},
       { name: 'C++'},
       { name: 'MATLAB'},
@@ -91,11 +89,12 @@ const Skills = () => {
     other: [
       { name: 'OOPs'},
       { name: 'DBMS'},
-      { name: 'Backend'},
-      { name: 'Data Analytics'},
+      { name: 'Probability'},
+      { name: 'Statistics'},
+      { name: 'Stochastic Processes'},
+      { name: 'Team work'},
       { name: 'Problem Solving'},
       { name: 'DSA'},
-      { name: 'Responsive Design'},
       { name: 'Performance Optimization'}
     ]
   };
