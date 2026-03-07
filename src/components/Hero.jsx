@@ -82,7 +82,7 @@ const Hero = () => {
             </div>
             
             <p className="hero-description fade-in delay-3">
-              I have completed B. Tech. in Electrical Engineering from IIT Ropar with a deep interest in Data Science, GenAI, and Backend Development. While my core studies gave me a solid base in electrical systems, I’ve spent a lot of time outside the classroom building projects that involve Machine Learning, Deep Learning, LLMs, and intelligent apps. I enjoy working on the backend — especially with FastAPI, Flask and Spring Boot — and I’m always up for learning new tools and tech. What drives me is solving real problems, learning fast, and building things that actually make an impact.
+              I have completed B. Tech. in Electrical Engineering from IIT Ropar with a deep interest in Data Science, GenAI, and Backend Development. While my core studies gave me a solid base in electrical systems, I’ve spent a lot of time outside the classroom building projects that involve Machine Learning, Deep Learning, LLMs, and intelligent apps. I enjoy working on the backend - especially with FastAPI, Flask and Spring Boot - and I’m always up for learning new tools and tech. What drives me is solving real problems, learning fast, and building things that actually make an impact.
             </p>
             
             <div className="hero-buttons fade-in delay-4">
