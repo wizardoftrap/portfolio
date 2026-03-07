@@ -42,9 +42,9 @@ function App() {
       
       <main>
         <Hero />
-        <Projects />
         <Experience />
         <Skills />
+        <Projects />
         <Education />
         <Certifications />
       </main>

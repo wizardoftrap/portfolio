@@ -88,17 +88,20 @@ const Education = () => {
           Education
         </h2>
 
-        <div className="education-container">
+        <div className="timeline">
           {educationData.map((edu, index) => (
             <div 
               key={index}
-              className={`education-card ${isVisible ? `fade-in delay-${index + 1}` : ''}`}
+              className={`timeline-item ${isVisible ? 'fade-in' : ''}`}
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="education-content">
-                <div className="education-header">
-                  <h3 className="education-degree">{edu.degree}</h3>
-                  <h4 className="education-institution">{edu.institution}</h4>
-                </div>
+              <div className="timeline-marker">
+                <FiBookOpen size={24} />
+              </div>
+              
+              <div className="timeline-content">
+                <h3 className="education-degree">{edu.degree}</h3>
+                <h4 className="education-institution">{edu.institution}</h4>
 
                 <div className="education-details">
                   <div className="education-detail">
@@ -150,9 +153,6 @@ const Education = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Decorative bottom border */}
-              <div className="education-footer"></div>
             </div>
           ))}
         </div>

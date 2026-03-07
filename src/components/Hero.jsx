@@ -45,27 +45,10 @@ const Hero = () => {
     setTimeout(type, 1000);
   }, []);
 
-  // Parallax effect for profile picture
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (!profileRef.current) return;
-      
-      const x = (window.innerWidth / 2 - e.pageX) / 25;
-      const y = (window.innerHeight / 2 - e.pageY) / 25;
-      
-      profileRef.current.style.transform = `translateX(${x}px) translateY(${y}px)`;
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
   const socialLinks = [
     { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/shiv-prakash-verma-000133234', label: 'LinkedIn' },
     { icon: <FiGithub />, url: 'https://github.com/wizardoftrap', label: 'GitHub' },
+    { icon: <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2em', lineHeight: '1' }}>🤗</span>, url: 'https://huggingface.co/wizardoftrap', label: 'Hugging Face' },
     { icon: <FiInstagram />, url: 'https://www.instagram.com/sp_shivamverma', label: 'Twitter' },
     { icon: <FiMail />, url: 'mailto:shivprakashiitropar@gmail.com', label: 'Email' }
   ];
@@ -73,9 +56,22 @@ const Hero = () => {
   return (
     <section id="hero" className="hero">
       <div className="container">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between hero-container">
-          {/* Left side - Text content */}
-          <div className="hero-content">
+        <div className="hero-container-vertical">
+          {/* Profile picture at top */}
+          <div className="hero-image-top fade-in">
+            <div className="profile-img-container">
+              <div ref={profileRef}>
+                <img 
+                  src="/assets/profile.jpg" 
+                  alt="Shiv Prakash" 
+                  className="profile-img"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Text content centered below */}
+          <div className="hero-content-centered">
             <p className="hero-subtitle fade-in">Hello, I'm</p>
             
             <h1 className="hero-title fade-in delay-1">Shiv Prakash Verma</h1>
@@ -86,14 +82,14 @@ const Hero = () => {
             </div>
             
             <p className="hero-description fade-in delay-3">
-              I have completed B. Tech. in Electrical Engineering from IIT Ropar with a deep interest in Data Science, GenAI, and Backend Development. While my core studies gave me a solid base in electrical systems, I’ve spent a lot of time outside the classroom building projects that involve Machine Learning, Deep Learning, LLMs, and intelligent apps. I enjoy working on the backend — especially with Flask and Spring Boot — and I’m always up for learning new tools and tech. What drives me is solving real problems, learning fast, and building things that actually make an impact.
+              I have completed B. Tech. in Electrical Engineering from IIT Ropar with a deep interest in Data Science, GenAI, and Backend Development. While my core studies gave me a solid base in electrical systems, I’ve spent a lot of time outside the classroom building projects that involve Machine Learning, Deep Learning, LLMs, and intelligent apps. I enjoy working on the backend — especially with FastAPI, Flask and Spring Boot — and I’m always up for learning new tools and tech. What drives me is solving real problems, learning fast, and building things that actually make an impact.
             </p>
             
             <div className="hero-buttons fade-in delay-4">
               <a href="#projects" className="btn btn-primary">
                 View My Work
               </a>
-              <a href="https://drive.usercontent.google.com/u/0/uc?id=1-3wZjEjtYUuAqqaIJaJPYjN2I8Fn7ZYG&export=download" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+              <a href="https://drive.usercontent.google.com/u/0/uc?id=1_qAliWs3h0-iiIGlQfL7p9sW8PRy-Ju_&export=download" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
                 Download CV
               </a>
             </div>
@@ -112,20 +108,6 @@ const Hero = () => {
                 </a>
               ))}
             </div>
-          </div>
-          
-          {/* Right side - Profile picture */}
-          <div className="hero-image fade-in">
-            <div className="profile-img-container">
-              <div ref={profileRef}>
-                <img 
-                  src="https://raw.githubusercontent.com/wizardoftrap/portfolio/refs/heads/master/src/assets/profile.jpg" 
-                  alt="Shiv Prakash" 
-                  className="profile-img"
-                />
-              </div>
-            </div>
-        
           </div>
         </div>
       </div>

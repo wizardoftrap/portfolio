@@ -49,11 +49,16 @@ const Skills = () => {
       { name: 'Spring Boot'},
       { name: 'Flask'},
       { name: 'RESTful APIs'},
-      { name: 'Streamlit'}
+      { name: 'FastAPI'},
+      { name: 'Streamlit'},
+      { name: 'LiveKit'}
     ],
     data: [
       { name: 'LLMs'},
       { name: 'GenAI'},
+      { name: 'Hugging Face'},
+      { name: 'Transformers'},
+      { name: 'Unsloth'},
       { name: 'Autogen'},
       { name: 'Langchain'},
       { name: 'n8n'},
@@ -72,6 +77,8 @@ const Skills = () => {
       { name: 'Git'},
       { name: 'GitHub'},
       { name: 'Docker'},
+      { name: 'Weights & Biases'},
+      { name: 'MLflow'},
       { name: 'VS Code'},
       { name: 'Eclipse'},
       { name: 'PyCharm'},

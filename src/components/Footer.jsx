@@ -8,6 +8,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/shiv-prakash-verma-000133234', label: 'LinkedIn' },
     { icon: <FiGithub />, url: 'https://github.com/wizardoftrap', label: 'GitHub' },
+    { icon: <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2em', lineHeight: '1' }}>🤗</span>, url: 'https://huggingface.co/wizardoftrap', label: 'Hugging Face' },
     { icon: <FiInstagram />, url: 'https://www.instagram.com/sp_shivamverma', label: 'Twitter' },
     { icon: <FiMail />, url: 'mailto:shivprakashiitropar@gmail.com', label: 'Email' }
   ];

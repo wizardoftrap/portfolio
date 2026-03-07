@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi';
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -49,27 +48,22 @@ const Experience = () => {
           Work Experience
         </h2>
 
-        <div className="experience-container">
-          {/* Company tabs */}
-          <div className={`experience-tabs ${isVisible ? 'fade-in delay-1' : ''}`}>
-            {experienceData.map((exp, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`experience-tab ${activeTab === index ? 'active' : ''}`}
-              >
-                {exp.company}
-              </button>
-            ))}
-          </div>
-
-          {/* Experience details */}
-          <div className="experience-content-container">
-            {experienceData.map((exp, index) => (
-              <div 
-                key={index}
-                className={`experience-content ${activeTab === index ? 'active' : ''} ${isVisible ? 'fade-in delay-2' : ''}`}
-              >
+        <div className="timeline">
+          {experienceData.map((exp, index) => (
+            <div 
+              key={index}
+              className={`timeline-item ${isVisible ? 'fade-in' : ''}`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <div className="timeline-marker">
+                <img 
+                  src={`/assets/${exp.company.toLowerCase()}.png`}
+                  alt={exp.company}
+                  className="timeline-logo"
+                />
+              </div>
+              
+              <div className="timeline-content">
                 <h3 className="experience-title">
                   {exp.position}
                 </h3>
@@ -107,8 +101,8 @@ const Experience = () => {
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
