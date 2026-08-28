@@ -28,6 +28,15 @@ const Projects = () => {
   // Sample project data - replace with your actual projects
   const projectsData = [
     {
+      id: 0,
+      title: 'LFM2.5 Hindi & Indian History Fine-Tuning',
+      description: 'Fine-tuned a 1.2B-parameter LFM2.5 model while training only 3.03% of its parameters through a two-stage LoRA pipeline. First performed instruction tuning on the 100K-row Sarvam Samvaad Indic conversation dataset to build strong Hindi fluency and improve its understanding of Indian context, then specialized the model on a self-curated 5.4K-row Indian history QA dataset grounded in NCERT textbooks and enriched with GPT-OSS-120B.',
+      image: '/assets/projects/finetune.png',
+      technologies: ['Generative AI', 'LLM', 'NLP', 'LoRA', 'Fine-Tuning', 'PyTorch'],
+      github: 'https://github.com/wizardoftrap/lfm_2-5-Hin_His',
+      category: 'data'
+    },
+    {
       id: 1,
       title: 'Language Agnostic Classifier',
       description: 'Train on English. Works on Hindi. No translation. No multilingual training. This project demonstrates that multilingual intelligence is not about data quantity — it\'s about abstraction.',

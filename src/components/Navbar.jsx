@@ -63,7 +63,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           </button>
           
           <a 
-            href="https://drive.usercontent.google.com/u/0/uc?id=1_qAliWs3h0-iiIGlQfL7p9sW8PRy-Ju_&export=download" 
+            href="https://drive.usercontent.google.com/u/0/uc?id=1DSwarxAUEqP9r2S-LgwnsGKLrIVjtZ_1&export=download" 
             target="_blank" 
             rel="noopener noreferrer"
             className="btn btn-primary header-resume"

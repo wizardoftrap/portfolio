@@ -26,7 +26,97 @@ const Certifications = () => {
   }, []);
 
   // Sample certification data - replace with your actual certifications
+  // Ordered newest first
   const certificationsData = [
+    {
+      id: 7,
+      name: 'Agentic System Design',
+      issuer: 'Educative',
+      date: '2026',
+      credentialId: 'XYQ5KZ59R5',
+      credentialURL: 'https://www.educative.io/verify-certificate/XYQ5KZ59R5',
+      description: '',
+      skills: [
+        'Agentic AI',
+        'System Design',
+        'LLMs',
+        'Multi-Agent Systems'
+      ],
+    },
+    {
+      id: 8,
+      name: 'Generative AI Essentials',
+      issuer: 'Educative',
+      date: '2026',
+      credentialId: '5GZ7PYT5FO',
+      credentialURL: 'https://www.educative.io/verify-certificate/5GZ7PYT5FO',
+      description: '',
+      skills: [
+        'Generative AI',
+        'LLMs',
+        'Prompt Engineering',
+        'RAG'
+      ],
+    },
+    {
+      id: 9,
+      name: 'Transformers for Computer Vision Applications',
+      issuer: 'Educative',
+      date: '2026',
+      credentialId: '8HAEMAWBHT',
+      credentialURL: 'https://www.educative.io/verify-certificate/8HAEMAWBHT',
+      description: '',
+      skills: [
+        'Transformers',
+        'Computer Vision',
+        'Deep Learning',
+        'Vision Transformers'
+      ],
+    },
+    {
+      id: 6,
+      name: 'BigQuery for Machine Learning',
+      issuer: 'Google',
+      date: 'June 2025',
+      credentialId: '16366276                            ',
+      credentialURL: 'https://www.cloudskillsboost.google/public_profiles/7d8a52e1-6c16-4f98-b6a9-bb97e04fd900/badges/16366276?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share',
+      description: '',
+      skills: [
+        'Google Cloud',
+        'SQL',
+        'Machine Learning',
+        'BigQuery'
+      ],
+    },
+    {
+      id: 4,
+      name: 'BigQuery for Data Analysts',
+      issuer: 'Google',
+      date: 'June 2025',
+      credentialId: '1630805                             ',
+      credentialURL: 'https://www.cloudskillsboost.google/public_profiles/7d8a52e1-6c16-4f98-b6a9-bb97e04fd900/badges/16300805?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share',
+      description: '',
+      skills: [
+        'Google Cloud',
+        'SQL',
+        'Machine Learning',
+        'BigQuery'
+      ],
+    },
+    {
+      id: 3,
+      name: 'BCG - Data Science Job Simulation',
+      issuer: 'Forage',
+      date: 'May 2025',
+      credentialId: 'tL3aF8ZexLN75E8hc                             ',
+      credentialURL: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/SKZxezskWgmFjRvj9/Tcz8gTtprzAS4xSoK_SKZxezskWgmFjRvj9_tL3aF8ZexLN75E8hc_1748411126765_completion_certificate.pdf',
+      description: '',
+      skills: [
+        'Python',
+        'Machine Learning',
+        'Data Analytics'
+      ],
+    },
     {
       id: 1,
       name: 'Data Structure and Algorithms',
@@ -57,35 +147,6 @@ const Certifications = () => {
       ],
     },
     {
-      id: 3,
-      name: 'BCG - Data Science Job Simulation',
-      issuer: 'Forage',
-      date: 'May 2025',
-      credentialId: 'tL3aF8ZexLN75E8hc                             ',
-      credentialURL: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/SKZxezskWgmFjRvj9/Tcz8gTtprzAS4xSoK_SKZxezskWgmFjRvj9_tL3aF8ZexLN75E8hc_1748411126765_completion_certificate.pdf',
-      description: '',
-      skills: [
-        'Python',
-        'Machine Learning',
-        'Data Analytics'
-      ],
-    },
-    {
-      id: 4,
-      name: 'BigQuery for Data Analysts',
-      issuer: 'Google',
-      date: 'June 2025',
-      credentialId: '1630805                             ',
-      credentialURL: 'https://www.cloudskillsboost.google/public_profiles/7d8a52e1-6c16-4f98-b6a9-bb97e04fd900/badges/16300805?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share',
-      description: '',
-      skills: [
-        'Google Cloud',
-        'SQL',
-        'Machine Learning',
-        'BigQuery'
-      ],
-    },
-    {
       id: 5,
       name: 'Object Oriented Programming in Java',
       issuer: 'Udemy',
@@ -100,21 +161,6 @@ const Certifications = () => {
         'Spring Boot',
         'Eclipse',
         'MySQL'
-      ],
-    },
-    {
-      id: 6,
-      name: 'BigQuery for Machine Learning',
-      issuer: 'Google',
-      date: 'June 2025',
-      credentialId: '16366276                            ',
-      credentialURL: 'https://www.cloudskillsboost.google/public_profiles/7d8a52e1-6c16-4f98-b6a9-bb97e04fd900/badges/16366276?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share',
-      description: '',
-      skills: [
-        'Google Cloud',
-        'SQL',
-        'Machine Learning',
-        'BigQuery'
       ],
     }
 

@@ -28,16 +28,16 @@ const Experience = () => {
   const experienceData = [
     {
       company: 'DIOnce',
-      position:'Data Science Associate',
+      position:'Data Scientist',
       period: 'July 2025 - Present',
       location: 'Bengaluru',
       description: [
-        'Collaborated with the data science team to research, develop, and deploy solutions using Large Language Models (LLMs).',
-        'Analyzed datasets and prepare data for training and evaluation of LLMs.',
-        'Assisted in fine-tuning, evaluating, and optimizing LLM-based models for various applications.',
-        'Worked on market research automation tool for automating comprehensive market research using LLMs'
+        'Built a multi-agent market research platform that orchestrates search, scraping, document processing, deduplication, sentiment analysis and human review into a single pipeline, delivering comprehensive, structured market insights and reports.',
+        'Developed an AI voice call agent using the LiveKit framework that handles interruptions, no-answers, rescheduling and warm transfers to human agents mid-call, supports multiple Indian languages, and runs at sub-second latency with post-call processing and knowledge base grounding.',
+        'Built an enterprise document intelligence platform that performs structured document extraction and reconstruction with version control, ingests documents into a knowledge graph, detects conflicts among documents with LLM-judged resolution and establishes cross references between documents across domains based on multiple signals.',
+        'Created an agentic Journey based workflow layer on top of document intelligence with goal-driven mini-agents modeled as graph nodes executing document-grounded, gated and audit trailed process automation, with a feedback loop designed to learn from audit trails.'
       ],
-      technologies: ['Data Science', 'GenAI', 'LLMs', 'Python', 'Autogen', 'Langchain']
+      technologies: ['Agentic AI', 'GenAI', 'LLMs', 'Python', 'LangGraph', 'LiveKit', 'Knowledge Graphs', 'RAG']
     }
   ];
 
