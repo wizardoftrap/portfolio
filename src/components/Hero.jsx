@@ -73,17 +73,12 @@ const Hero = () => {
         </p>
 
         <p className="hero-description">
-          I have completed my B.Tech. in Electrical Engineering from IIT Ropar,
-          with a deep interest in Data Science, GenAI, and Backend Development.
-          While my core studies gave me a solid base in electrical systems, I
-          spent a lot of time outside the classroom building projects involving
-          Machine Learning, Deep Learning, and LLMs. Today I build agentic AI in
-          production: multi-agent research pipelines, sub-second voice agents,
-          and document intelligence grounded in knowledge graphs. I enjoy the
-          backend work that holds it all together, especially with FastAPI,
-          Flask and Spring Boot, and I am always up for learning new tools. What
-          drives me is solving real problems, learning fast, and building things
-          that actually make an impact.
+          B.Tech. in Electrical Engineering from IIT Ropar, with a deep interest
+          in Data Science, GenAI, and Backend Development. Today I build agentic
+          AI in production: multi-agent research pipelines, sub-second voice
+          agents, and document intelligence grounded in knowledge graphs. What
+          drives me is solving real problems and building things that make an
+          impact.
         </p>
 
         <div className="hero-actions">

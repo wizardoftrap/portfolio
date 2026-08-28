@@ -404,14 +404,16 @@
   max-width: var(--measure);
 }
 
+/* Round bullet, not a dash */
 .entry-list li::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0.65em;
+  left: 2px;
+  top: 0.62em;
   width: 5px;
-  height: 1px;
-  background: var(--ink-400);
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tint-ink);
 }
 
 .tag-row {

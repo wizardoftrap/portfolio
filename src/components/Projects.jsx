@@ -13,6 +13,7 @@ const projectsData = [
     image: '/assets/projects/finetune.png',
     technologies: ['LoRA', 'LLM', 'NLP', 'PyTorch'],
     github: 'https://github.com/wizardoftrap/lfm_2-5-Hin_His',
+    demo: 'https://huggingface.co/wizardoftrap/LFM2.5-1.2B-his',
     category: 'data',
     featured: true
   },
