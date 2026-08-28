@@ -1,159 +1,87 @@
 // src/components/Education.jsx
-import { useEffect, useState } from 'react';
-import { FiBookOpen, FiCalendar, FiMapPin, FiAward } from 'react-icons/fi';
+import SectionHead from './SectionHead';
+import { useReveal, revealProps } from '../hooks/useReveal';
+
+const educationData = [
+  {
+    degree: 'B.Tech. in Electrical Engineering',
+    institution: 'IIT Ropar',
+    location: 'Rupnagar, Punjab',
+    period: '2021 - 2025',
+    result: 'CGPA 7.34 / 10',
+    achievements: ['Captain, Hockey, IIT Ropar', 'Deputy Secretary, ODAC, IIT Ropar'],
+    courses: [
+      'Data Structures',
+      'Foundation of Data Science',
+      'Deep Learning in Computer Vision',
+      'Internet of Things',
+      'Probability and Stochastic Processes',
+      'Control Systems',
+      'Digital Circuits',
+      'Analog Circuits'
+    ]
+  },
+  {
+    degree: 'Class 12th',
+    institution: 'Raghukul Vidyapeeth',
+    location: 'Gonda, Uttar Pradesh',
+    period: '2019 - 2021',
+    result: '80%',
+    achievements: [],
+    courses: ['Physics', 'Chemistry', 'Mathematics']
+  },
+  {
+    degree: 'Class 10th',
+    institution: 'Lucknow Public School',
+    location: 'Lucknow, Uttar Pradesh',
+    period: '2017 - 2019',
+    result: '96.16%',
+    achievements: [],
+    courses: ['Science', 'Mathematics', 'Information Technology']
+  }
+];
 
 const Education = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById('education');
-      if (!section) return;
-      
-      const sectionTop = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      
-      if (sectionTop < windowHeight * 0.75) {
-        setIsVisible(true);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Sample education data - replace with your actual education
-  const educationData = [
-    {
-      degree: 'B. Tech. in Electrical Engineering',
-      institution: 'IIT Ropar',
-      location: 'Rupnagar, Punjab',
-      period: '2021 - 2025',
-      description: '',
-      achievements: [
-        'GPA: 7.34/10.0',
-        'Captain, Hockey, IIT Ropar',
-        'Deputy Secretary, ODAC, IIT Ropar'
-      ],
-      courses: [
-        'Introduction to Data Structures',
-        'Foundation of Data Science',
-        'Internet of Things',
-        'Deep Learming in Computer Vision',
-        'Probability and Stochastic Processes',
-        'Control System',
-        'Digital Circuits',
-        'Analog Circuits',
-        'High Voltage POwer Equipment'
-      ]
-    },
-    {
-      degree: 'Class 12th',
-      institution: 'Raghukul Vidyapeeth',
-      location: 'Gonda, Uttar Pradesh',
-      period: '2019 - 2021',
-      description: '',
-      achievements: [
-        'Percentage: 80%'
-      ],
-      courses: [
-        'Physics',
-        'Chemistry',
-        'Mathematics'
-      ]
-    },
-    {
-      degree: 'Class 10th',
-      institution: 'Lucknow Public School',
-      location: 'Lucknow, Uttar Pradesh',
-      period: '2017 - 2019',
-      description: '',
-      achievements: [
-        'Percentage: 96.16%'
-      ],
-      courses: [
-        'Science',
-        'Mathematics',
-        'Foundation in Information Technology'
-      ]
-    }
-  ];
+  const [ref, isVisible] = useReveal();
 
   return (
-    <section id="education" className="section">
+    <section id="education" className="section section--sand" ref={ref}>
       <div className="container">
-        <h2 className={`section-title ${isVisible ? 'fade-in' : ''}`}>
-          Education
-        </h2>
+        <SectionHead index="04" title="Education" />
 
-        <div className="timeline">
+        <div className="edu-grid">
           {educationData.map((edu, index) => (
-            <div 
-              key={index}
-              className={`timeline-item ${isVisible ? 'fade-in' : ''}`}
-              style={{ animationDelay: `${index * 0.2}s` }}
+            <article
+              key={edu.degree}
+              {...revealProps('edu-card', isVisible, index, 70)}
             >
-              <div className="timeline-marker">
-                <FiBookOpen size={24} />
+              <span className="edu-result">{edu.result}</span>
+
+              <h3 className="entry-title">{edu.degree}</h3>
+              <p className="entry-org">{edu.institution}</p>
+
+              <div className="cert-meta">
+                <span className="mono">{edu.period}</span>
+                <span className="mono">{edu.location}</span>
               </div>
-              
-              <div className="timeline-content">
-                <h3 className="education-degree">{edu.degree}</h3>
-                <h4 className="education-institution">{edu.institution}</h4>
 
-                <div className="education-details">
-                  <div className="education-detail">
-                    <FiCalendar />
-                    <span>{edu.period}</span>
-                  </div>
-                  <div className="education-detail">
-                    <FiMapPin />
-                    <span>{edu.location}</span>
-                  </div>
-                </div>
+              {edu.achievements.length > 0 && (
+                <ul className="entry-list">
+                  {edu.achievements.map((achievement) => (
+                    <li key={achievement}>{achievement}</li>
+                  ))}
+                </ul>
+              )}
 
-                <p className="education-description">
-                  {edu.description}
-                </p>
-
-                <div className="education-grid">
-                  {/* Achievements */}
-                  <div className="education-achievements">
-                    <h5 className="achievements-title">
-                      <FiAward />
-                      Achievements
-                    </h5>
-                    <ul className="achievements-list">
-                      {edu.achievements.map((achievement, i) => (
-                        <li key={i} className="achievements-item">
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Key Courses */}
-                  <div>
-                    <h5 className="courses-title">
-                      <FiBookOpen />
-                      Key Courses
-                    </h5>
-                    <div className="courses-tags">
-                      {edu.courses.map((course, i) => (
-                        <span 
-                          key={i}
-                          className="course-tag"
-                        >
-                          {course}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+              <p className="entry-subhead">Key courses</p>
+              <div className="tag-row">
+                {edu.courses.map((course) => (
+                  <span key={course} className="tech-tag">
+                    {course}
+                  </span>
+                ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

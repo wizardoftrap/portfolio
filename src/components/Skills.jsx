@@ -1,155 +1,94 @@
 // src/components/Skills.jsx
-import { useState, useEffect } from 'react';
-import { 
-  FiCode, 
-  FiLayout, 
-  FiDatabase, 
-  FiTool, 
-  FiServer, 
-  FiGlobe,
-  FiCheck
-} from 'react-icons/fi';
+import { FiCpu, FiServer, FiCode, FiTool, FiCompass } from 'react-icons/fi';
+import SectionHead from './SectionHead';
+import { useReveal } from '../hooks/useReveal';
+
+// Every group carries its own hue so the section reads as five blocks,
+// not one wall of chips.
+const groups = [
+  {
+    id: 'data',
+    name: 'AI & Data',
+    ink: 'var(--lilac-ink)',
+    icon: <FiCpu size={16} />,
+    skills: [
+      'LLMs', 'Generative AI', 'Agentic AI', 'LoRA Fine-Tuning', 'RAG', 'LangChain',
+      'LangGraph', 'Transformers', 'Hugging Face', 'Unsloth', 'Autogen', 'PyTorch',
+      'TensorFlow', 'Machine Learning', 'Deep Learning', 'Pandas', 'NumPy', 'n8n'
+    ]
+  },
+  {
+    id: 'software',
+    name: 'Backend & Software',
+    ink: 'var(--mint-ink)',
+    icon: <FiServer size={16} />,
+    skills: [
+      'FastAPI', 'Flask', 'Spring Boot', 'React', 'REST APIs', 'Streamlit', 'LiveKit',
+      'Django', 'PostgreSQL', 'MySQL', 'MongoDB', 'Neo4j', 'ArcadeDB', 'Pinecone',
+      'Firebase'
+    ]
+  },
+  {
+    id: 'languages',
+    name: 'Languages',
+    ink: 'var(--peach-ink)',
+    icon: <FiCode size={16} />,
+    skills: ['Python', 'Java', 'C++', 'SQL', 'MATLAB']
+  },
+  {
+    id: 'tools',
+    name: 'Platforms & Tools',
+    ink: 'var(--sky-ink)',
+    icon: <FiTool size={16} />,
+    skills: [
+      'Google Cloud', 'Azure', 'BigQuery', 'Docker', 'Git', 'GitHub',
+      'Weights & Biases', 'MLflow', 'Jupyter', 'Linux', 'Postman', 'Android Studio'
+    ]
+  },
+  {
+    id: 'other',
+    name: 'Foundations',
+    ink: 'var(--sand-ink)',
+    icon: <FiCompass size={16} />,
+    skills: [
+      'Data Structures & Algorithms', 'OOP', 'DBMS', 'Probability', 'Statistics',
+      'Stochastic Processes', 'Problem Solving', 'Performance Optimization'
+    ]
+  }
+];
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState('data');
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById('skills');
-      if (!section) return;
-      
-      const sectionTop = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      
-      if (sectionTop < windowHeight * 0.75) {
-        setIsVisible(true);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Skill categories with icons
-  const categories = [
-    { id: 'data', name: 'Data Science', icon: <FiDatabase /> },
-    { id: 'software', name: 'Software', icon: <FiServer /> },
-    { id: 'languages', name: 'Languages', icon: <FiCode /> },
-    { id: 'tools', name: 'Tools', icon: <FiTool /> },
-    { id: 'other', name: 'Other', icon: <FiGlobe /> }
-  ];
-
-  // Skills data - replace with your actual skills
-  const skillsData = {
-    software: [
-      { name: 'React'},
-      { name: 'Spring Boot'},
-      { name: 'Flask'},
-      { name: 'RESTful APIs'},
-      { name: 'FastAPI'},
-      { name: 'Streamlit'},
-      { name: 'LiveKit'}
-    ],
-    data: [
-      { name: 'LLMs'},
-      { name: 'GenAI'},
-      { name: 'Agentic AI'},
-      { name: 'LoRA Fine-Tuning'},
-      { name: 'RAG'},
-      { name: 'LangGraph'},
-      { name: 'PyTorch'},
-      { name: 'TensorFlow'},
-      { name: 'Pinecone'},
-      { name: 'PostgreSQL'},
-      { name: 'BigQuery'},
-      { name: 'Hugging Face'},
-      { name: 'Transformers'},
-      { name: 'Unsloth'},
-      { name: 'Autogen'},
-      { name: 'Langchain'},
-      { name: 'n8n'},
-      { name: 'Machine Learning'},
-      { name: 'Deep Learning'},
-      { name: 'MongoDB'},
-      { name: 'MySQL'},
-      { name: 'Firebase'},
-      { name: 'Pandas'},
-      { name: 'NumPy'}
-      
-    ],
-    tools: [
-      { name: 'Google Cloud'},
-      { name: 'Azure'},
-      { name: 'Git'},
-      { name: 'GitHub'},
-      { name: 'Docker'},
-      { name: 'Weights & Biases'},
-      { name: 'MLflow'},
-      { name: 'VS Code'},
-      { name: 'Eclipse'},
-      { name: 'PyCharm'},
-      { name: 'Jupyter'},
-      { name: 'Linux'},
-      { name: 'Android Studio'}
-    ],
-    languages: [
-      { name: 'Java'},
-      { name: 'Python'},
-      { name: 'C++'},
-      { name: 'MATLAB'},
-      { name: 'SQL'}
-    ],
-    other: [
-      { name: 'OOPs'},
-      { name: 'DBMS'},
-      { name: 'Probability'},
-      { name: 'Statistics'},
-      { name: 'Stochastic Processes'},
-      { name: 'Team work'},
-      { name: 'Problem Solving'},
-      { name: 'DSA'},
-      { name: 'Performance Optimization'}
-    ]
-  };
+  const [ref, isVisible] = useReveal();
 
   return (
-    <section id="skills" className="section skills">
+    <section id="skills" className="section section--sky" ref={ref}>
       <div className="container">
-        <h2 className={`section-title ${isVisible ? 'fade-in' : ''}`}>
-          My Skills
-        </h2>
+        <SectionHead index="02" title="Skills" />
 
-        {/* Category tabs */}
-        <div className={`skills-categories ${isVisible ? 'fade-in delay-1' : ''}`}>
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+        <div className="skills-grid">
+          {groups.map((group, index) => (
+            <div
+              key={group.id}
+              className={`skill-group reveal${isVisible ? ' is-visible' : ''}`}
+              style={{ '--group-ink': group.ink, '--reveal-delay': `${index * 70}ms` }}
             >
-              {category.icon}
-              {category.name}
-            </button>
+              <div className="skill-group-head">
+                <h3 className="skill-group-name">
+                  {group.icon}
+                  {group.name}
+                </h3>
+              </div>
+
+              <div className="skills-field">
+                {group.skills.map((skill) => (
+                  <span key={skill} className="skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-
-{/* Skills grid without progress bars */}
-<div className={`skills-grid ${isVisible ? 'fade-in delay-2' : ''}`}>
-  {(skillsData[activeCategory] || []).map((skill, index) => (
-    <div 
-      key={index}
-      className="skill-card"
-    >
-      {/* Simplified skill card without level indicator */}
-      <h3 className="skill-name">{skill.name}</h3>
-    </div>
-  ))}
-</div>
-
-        {/* Skill cloud visualization */}
       </div>
     </section>
   );

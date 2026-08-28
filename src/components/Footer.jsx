@@ -1,129 +1,32 @@
 // src/components/Footer.jsx
-import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiHeart, FiArrowUp } from 'react-icons/fi';
+import { FiArrowUp, FiArrowUpRight } from 'react-icons/fi';
+import SocialLinks from './SocialLinks';
+import { EMAIL } from '../data/links';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Social media links - replace with your actual links
-  const socialLinks = [
-    { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/shiv-prakash-verma-000133234', label: 'LinkedIn' },
-    { icon: <FiGithub />, url: 'https://github.com/wizardoftrap', label: 'GitHub' },
-    { icon: <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2em', lineHeight: '1' }}>🤗</span>, url: 'https://huggingface.co/wizardoftrap', label: 'Hugging Face' },
-    { icon: <FiInstagram />, url: 'https://www.instagram.com/sp_shivamverma', label: 'Twitter' },
-    { icon: <FiMail />, url: 'mailto:shivprakashiitropar@gmail.com', label: 'Email' }
-  ];
-
-  // Quick links for footer navigation
-  const quickLinks = [
-    { name: 'Home', id: 'hero' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'Experience', id: 'experience' },
-    { name: 'Skills', id: 'skills' },
-    { name: 'Education', id: 'education' },
-    { name: 'Certifications', id: 'certifications' }
-  ];
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const offsetTop = section.offsetTop;
-      window.scrollTo({
-        top: offsetTop - 70, // Adjust for header height
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <footer className="footer">
       <div className="container">
-        {/* Back to top button */}
-        <div className="back-to-top">
-          <div
-            className="top-btn"
-            onClick={scrollToTop}
-          >
-            <FiArrowUp />
-          </div>
+        <div className="footer-top">
+          <p className="footer-statement">Open to work.</p>
+
+          <a href={`mailto:${EMAIL}`} className="footer-contact-link">
+            Get in Touch <FiArrowUpRight size={18} />
+          </a>
         </div>
 
-        <div className="footer-content">
-          {/* About section */}
-          <div className="footer-about">
-            <h3>Shiv Prakash Verma</h3>
-            <p>
-              Data Science Associate@DIOnce | IIT Ropar
-            </p>
-            <div className="footer-social">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="social-icon"
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick links */}
-          <div className="footer-links">
-            <h3>Quick Links</h3>
-            <ul className="footer-nav">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={`#${link.id}`}
-                    className="footer-nav-link"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.id);
-                    }}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact section */}
-          <div className="footer-contact">
-            <h3>Contact Me</h3>
-            <p>
-              Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
-            </p>
-            <a
-              href="mailto:shivprakashiitrpr@gmail.com"
-              className="btn btn-primary"
-            >
-              <FiMail className="mr-2" /> Get In Touch
-            </a>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="footer-divider"></div>
-
-        {/* Copyright */}
         <div className="footer-bottom">
-          <p className="copyright">
-            © {currentYear} Shiv Prakash Verma. All rights reserved.
-          </p>
-          <p className="footer-credits">
-            Made with <FiHeart className="heart-icon" /> using React
-          </p>
+          <span className="mono">
+            © {currentYear} Shiv Prakash Verma · Data Scientist at DIOnce
+          </span>
+
+          <SocialLinks className="footer-social" />
+
+          <a href="#hero" className="to-top">
+            Top <FiArrowUp size={12} />
+          </a>
         </div>
       </div>
     </footer>

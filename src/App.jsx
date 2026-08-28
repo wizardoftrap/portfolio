@@ -10,36 +10,28 @@ import Certifications from './components/Certifications';
 import Footer from './components/Footer';
 import './App.css';
 
+const THEME_KEY = 'theme';
+
+/** Stored choice wins; otherwise fall back to the OS preference. */
+const getInitialTheme = () => {
+  const stored = localStorage.getItem(THEME_KEY);
+  if (stored === 'dark' || stored === 'light') return stored === 'dark';
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+};
+
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(getInitialTheme);
 
+  // Single source of truth: state drives the body class, never the reverse.
   useEffect(() => {
-    // Check for user's preferred color scheme
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(prefersDarkMode);
-    
-    // Apply dark mode class to body
-    if (prefersDarkMode) {
-      document.body.classList.add('dark-mode');
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode');
-  };
+    document.body.classList.toggle('dark-mode', darkMode);
+    localStorage.setItem(THEME_KEY, darkMode ? 'dark' : 'light');
+  }, [darkMode]);
 
   return (
     <div className="app">
-      {/* Animated background */}
-      <div className="animated-bg">
-        <div className="blob"></div>
-        <div className="blob"></div>
-        <div className="blob"></div>
-      </div>
-      
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      
+      <Navbar darkMode={darkMode} toggleDarkMode={() => setDarkMode((v) => !v)} />
+
       <main>
         <Hero />
         <Experience />
@@ -48,7 +40,7 @@ function App() {
         <Education />
         <Certifications />
       </main>
-      
+
       <Footer />
     </div>
   );

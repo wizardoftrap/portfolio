@@ -1,115 +1,106 @@
 // src/components/Hero.jsx
-import { useEffect, useRef } from 'react';
-import { FiGithub, FiLinkedin, FiMail, FiInstagram } from 'react-icons/fi';
+import { useEffect, useState } from 'react';
+import SocialLinks from './SocialLinks';
+import { RESUME_URL } from '../data/links';
+
+const ROLES = ['Agentic AI', 'Generative AI', 'LLM Systems', 'Backend'];
+
+const TYPE_MS = 90;
+const DELETE_MS = 45;
+const HOLD_MS = 1400;
 
 const Hero = () => {
-  const profileRef = useRef(null);
-  const typingRef = useRef(null);
-  const typingTextRef = useRef(null);
-  
-  // Typing animation effect
+  const [text, setText] = useState('');
+
+  // Types and deletes each role in turn. One timer, always cleaned up.
   useEffect(() => {
-    if (!typingRef.current || !typingTextRef.current) return;
-    
-    const roles = ['Data Science','AI/ML','GenAI/AI Agents', 'Backend'];
-    let currentRoleIndex = 0;
-    let currentCharIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
-    
-    const type = () => {
-      const currentRole = roles[currentRoleIndex];
-      
-      if (isDeleting) {
-        typingTextRef.current.textContent = currentRole.substring(0, currentCharIndex - 1);
-        currentCharIndex--;
-        typingSpeed = 50;
-      } else {
-        typingTextRef.current.textContent = currentRole.substring(0, currentCharIndex + 1);
-        currentCharIndex++;
-        typingSpeed = 100;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setText(ROLES[0]);
+      return;
+    }
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+    let timer;
+
+    const tick = () => {
+      const role = ROLES[roleIndex];
+      charIndex += deleting ? -1 : 1;
+      setText(role.slice(0, charIndex));
+
+      let delay = deleting ? DELETE_MS : TYPE_MS;
+
+      if (!deleting && charIndex === role.length) {
+        deleting = true;
+        delay = HOLD_MS;
+      } else if (deleting && charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % ROLES.length;
+        delay = 400;
       }
-      
-      if (!isDeleting && currentCharIndex === currentRole.length) {
-        isDeleting = true;
-        typingSpeed = 1000; // Pause at the end
-      } else if (isDeleting && currentCharIndex === 0) {
-        isDeleting = false;
-        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-        typingSpeed = 500; // Pause before typing next role
-      }
-      
-      setTimeout(type, typingSpeed);
+
+      timer = setTimeout(tick, delay);
     };
-    
-    setTimeout(type, 1000);
+
+    timer = setTimeout(tick, 700);
+    return () => clearTimeout(timer);
   }, []);
 
-  const socialLinks = [
-    { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/shiv-prakash-verma-000133234', label: 'LinkedIn' },
-    { icon: <FiGithub />, url: 'https://github.com/wizardoftrap', label: 'GitHub' },
-    { icon: <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2em', lineHeight: '1' }}>🤗</span>, url: 'https://huggingface.co/wizardoftrap', label: 'Hugging Face' },
-    { icon: <FiInstagram />, url: 'https://www.instagram.com/sp_shivamverma', label: 'Twitter' },
-    { icon: <FiMail />, url: 'mailto:shivprakashiitropar@gmail.com', label: 'Email' }
-  ];
-
   return (
-    <section id="hero" className="hero">
+    <section id="hero" className="hero section--lilac">
       <div className="container">
-        <div className="hero-container-vertical">
-          {/* Profile picture at top */}
-          <div className="hero-image-top fade-in">
-            <div className="profile-img-container">
-              <div ref={profileRef}>
-                <img 
-                  src="/assets/profile.jpg" 
-                  alt="Shiv Prakash" 
-                  className="profile-img"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Text content centered below */}
-          <div className="hero-content-centered">
-            <p className="hero-subtitle fade-in">Hello, I'm</p>
-            
-            <h1 className="hero-title fade-in delay-1">Shiv Prakash Verma</h1>
-            
-            <div className="typing-container fade-in delay-2" ref={typingRef}>
-              <span ref={typingTextRef} className="typing-text"></span>
-              <span className="typing-cursor">|</span>
-            </div>
-            
-            <p className="hero-description fade-in delay-3">
-              I have completed B. Tech. in Electrical Engineering from IIT Ropar with a deep interest in Data Science, GenAI, and Backend Development. While my core studies gave me a solid base in electrical systems, I’ve spent a lot of time outside the classroom building projects that involve Machine Learning, Deep Learning, LLMs, and intelligent apps. I enjoy working on the backend - especially with FastAPI, Flask and Spring Boot - and I’m always up for learning new tools and tech. What drives me is solving real problems, learning fast, and building things that actually make an impact.
-            </p>
-            
-            <div className="hero-buttons fade-in delay-4">
-              <a href="#projects" className="btn btn-primary">
-                View My Work
-              </a>
-              <a href="https://drive.usercontent.google.com/u/0/uc?id=1DSwarxAUEqP9r2S-LgwnsGKLrIVjtZ_1&export=download" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                Download CV
-              </a>
-            </div>
-            
-            <div className="hero-social fade-in delay-5">
-              {socialLinks.map((link, index) => (
-                <a 
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="social-icon"
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
-          </div>
+        <div className="hero-eyebrow">
+          <img
+            src="/assets/profile.jpg"
+            alt=""
+            className="hero-avatar"
+            width="44"
+            height="44"
+          />
+          <span className="mono">Bengaluru, India · Available for work</span>
         </div>
+
+        <h1 className="hero-name">
+          Shiv Prakash
+          <br />
+          Verma
+        </h1>
+
+        <p className="hero-role">
+          Data Scientist · <span className="typed">{text}</span>
+          <span className="cursor" aria-hidden="true">_</span>
+        </p>
+
+        <p className="hero-description">
+          I have completed my B.Tech. in Electrical Engineering from IIT Ropar,
+          with a deep interest in Data Science, GenAI, and Backend Development.
+          While my core studies gave me a solid base in electrical systems, I
+          spent a lot of time outside the classroom building projects involving
+          Machine Learning, Deep Learning, and LLMs. Today I build agentic AI in
+          production: multi-agent research pipelines, sub-second voice agents,
+          and document intelligence grounded in knowledge graphs. I enjoy the
+          backend work that holds it all together, especially with FastAPI,
+          Flask and Spring Boot, and I am always up for learning new tools. What
+          drives me is solving real problems, learning fast, and building things
+          that actually make an impact.
+        </p>
+
+        <div className="hero-actions">
+          <a href="#projects" className="btn btn-primary">
+            View Work
+          </a>
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+          >
+            Download CV
+          </a>
+        </div>
+
+        <SocialLinks />
       </div>
     </section>
   );
