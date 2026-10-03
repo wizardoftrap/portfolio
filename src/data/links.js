@@ -9,6 +9,6 @@ export const SOCIAL = [
   { id: 'linkedin', url: 'https://www.linkedin.com/in/shiv-prakash-verma-000133234', label: 'LinkedIn' },
   { id: 'github', url: 'https://github.com/wizardoftrap', label: 'GitHub' },
   { id: 'huggingface', url: 'https://huggingface.co/wizardoftrap', label: 'Hugging Face' },
-  { id: 'instagram', url: 'https://www.instagram.com/sp_shivamverma', label: 'Instagram' },
+  { id: 'instagram', url: 'https://www.instagram.com/_shivamverma_09', label: 'Instagram' },
   { id: 'email', url: `mailto:${EMAIL}`, label: 'Email' }
 ];

@@ -11,10 +11,10 @@ const experienceData = [
     description: [
       'Built a multi-agent market research platform that orchestrates search, scraping, document processing, deduplication, sentiment analysis and human review into a single pipeline, delivering comprehensive, structured market insights and reports.',
       'Developed an AI voice call agent using the LiveKit framework that handles interruptions, no-answers, rescheduling and warm transfers to human agents mid-call, supports multiple Indian languages, and runs at sub-second latency with post-call processing and knowledge base grounding.',
-      'Built an enterprise document intelligence platform that performs structured document extraction and reconstruction with version control, ingests documents into a knowledge graph, detects conflicts among documents with LLM-judged resolution and establishes cross references between documents across domains based on multiple signals.',
+      'Built a multi-tenant enterprise document intelligence platform on Django REST Framework, PostgreSQL (pgvector) and an ArcadeDB knowledge graph, turning PDFs and DOCX into structured, versioned data through a reviewable six-stage pipeline with draft-based updates and rollback, ingesting documents into a cross-document ontology with fact-level provenance, detecting policy conflicts with LLM-judged, actionable resolutions, establishing cross references across domains from multiple signals, and serving answers through a five-mode fallback search copilot with RAGAS-style evaluation, API keys and role-based data governance.',
       'Created an agentic Journey based workflow layer on top of document intelligence with goal-driven mini-agents modeled as graph nodes executing document-grounded, gated and audit trailed process automation, with a feedback loop designed to learn from audit trails.'
     ],
-    technologies: ['Agentic AI', 'GenAI', 'LLMs', 'Python', 'LangGraph', 'LiveKit', 'Knowledge Graphs', 'RAG']
+    technologies: ['Agentic AI', 'GenAI', 'LLMs', 'Python', 'Django', 'PostgreSQL', 'LangGraph', 'LiveKit', 'Knowledge Graphs', 'RAG']
   }
 ];
 
